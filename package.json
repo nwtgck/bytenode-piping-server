@@ -7,7 +7,7 @@
     "remove-shebang-from-bundle": "sed -i -e 's/#!\\/usr\\/bin\\/env node/\\/\\/#!\\/usr\\/bin\\/env node/g' dist/index.js",
     "bundle": "parcel build piping-server/dist/src/index.js --target=node --bundle-node-modules --no-cache && npm run remove-shebang-from-bundle",
     "build": "npm run piping-build && npm run bundle",
-    "start": "npm run build && bytenode ./piping-server/dist/src/index.jsc",
+    "start": "npm run build && bytenode ./dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ryo Ota <nwtgck@gmail.com> (https://github.com/nwtgck)",
