@@ -6,8 +6,9 @@
     "piping-build": "cd piping-server && npm i && npm run build && npm prune --production",
     "remove-shebang-from-bundle": "sed -i -e 's/#!\\/usr\\/bin\\/env node/\\/\\/#!\\/usr\\/bin\\/env node/g' dist/index.js",
     "bundle": "parcel build piping-server/dist/src/index.js --target=node --bundle-node-modules --no-cache && npm run remove-shebang-from-bundle",
-    "build": "npm run piping-build && npm run bundle",
-    "start": "npm run build && bytenode ./dist/index.js",
+    "compile": "bytenode -c ./dist/index.js",
+    "build": "npm run piping-build && npm run bundle && npm run compile",
+    "start": "npm run build && bytenode ./dist/index.jsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ryo Ota <nwtgck@gmail.com> (https://github.com/nwtgck)",
