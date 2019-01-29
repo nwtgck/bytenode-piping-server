@@ -1,6 +1,6 @@
 # NOTE: Multi-stage Build
 
-FROM node:10.15-alpine as build
+FROM node:11.8-alpine as build
 
 COPY . /build
 
@@ -12,7 +12,7 @@ RUN npm install && \
     npm run build
 
 
-FROM node:10.15-alpine
+FROM node:11.8-alpine
 
 LABEL maintainer="Ryo Ota <nwtgck@gmail.com>"
 
