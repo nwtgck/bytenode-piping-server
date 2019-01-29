@@ -4,13 +4,17 @@
   "description": "Piping server in bytenode",
   "scripts": {
     "piping-build": "cd piping-server && npm i && npm run build && npm prune --production",
-    "build": "npm run piping-build && pwd && find ./piping-server -name *.js | xargs bytenode -c",
-    "start": "npm run build && bytenode ./piping-server/dist/src/index.jsc",
+    "remove-shebang-from-bundle": "sed -i -e 's/#!\\/usr\\/bin\\/env node/\\/\\/#!\\/usr\\/bin\\/env node/g' dist/index.js",
+    "bundle": "parcel build piping-server/dist/src/index.js --target=node --bundle-node-modules --no-cache && npm run remove-shebang-from-bundle",
+    "compile": "bytenode -c ./dist/index.js",
+    "build": "npm run piping-build && npm run bundle && npm run compile",
+    "start": "npm run build && bytenode ./dist/index.jsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ryo Ota <nwtgck@gmail.com> (https://github.com/nwtgck)",
   "license": "MIT",
   "devDependencies": {
-    "bytenode": "^1.0.2"
+    "bytenode": "^1.0.2",
+    "parcel-bundler": "^1.11.0"
   }
 }
