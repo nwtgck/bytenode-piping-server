@@ -29,3 +29,11 @@ Then, a Piping server is running on http://localhost:8080.
 cd <this repo>
 docker build -t myimage .
 ```
+
+## Build procedure
+
+Here is an explanation how this project is built by `npm run build`.
+
+1. Build piping-server: (to make `./piping-server/dist`)
+1. Bundle `./piping-server`: (to make `./dist`)
+1. Compile `./dist/index.js`: (to make `./dist/index.jsc`)
