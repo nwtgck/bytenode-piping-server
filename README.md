@@ -1,5 +1,5 @@
 # bytenode-piping-server
-[![](https://images.microbadger.com/badges/image/nwtgck/bytenode-piping-server.svg)](https://microbadger.com/images/nwtgck/bytenode-piping-server "Get your own image badge on microbadger.com")
+[![CircleCI](https://circleci.com/gh/nwtgck/bytenode-piping-server.svg?style=shield)](https://circleci.com/gh/nwtgck/bytenode-piping-server) [![](https://images.microbadger.com/badges/image/nwtgck/bytenode-piping-server.svg)](https://microbadger.com/images/nwtgck/bytenode-piping-server "Get your own image badge on microbadger.com")
 
 Precompiled [Piping Server](https://github.com/nwtgck/piping-server)
 
