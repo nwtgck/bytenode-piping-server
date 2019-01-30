@@ -19,8 +19,8 @@ LABEL maintainer="Ryo Ota <nwtgck@gmail.com>"
 # Install bytenode globally
 RUN npm install -g bytenode
 
-# Copy build files to /app
-COPY --from=build /build/dist /app
+# Copy compiled jsc to /app
+COPY --from=build /build/dist/index.jsc /app/index.jsc
 
 # Run entry (Run the server)
 ENTRYPOINT ["bytenode", "/app/index.jsc"]
