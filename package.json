@@ -5,9 +5,8 @@
   "scripts": {
     "piping-build": "cd piping-server && npm i && npm run build && npm prune --production",
     "remove-shebang-from-bundle": "sed -i -e 's/#!\\/usr\\/bin\\/env node/\\/\\/#!\\/usr\\/bin\\/env node/g' dist/index.js",
-    "bundle": "parcel build piping-server/dist/src/index.js --target=node --bundle-node-modules --no-cache && npm run remove-shebang-from-bundle",
-    "compile": "bytenode -c ./dist/index.js",
-    "build": "npm run piping-build && npm run bundle && npm run compile",
+    "bundle": "npm run piping-build && parcel build piping-server/dist/src/index.js --target=node --bundle-node-modules --no-cache && npm run remove-shebang-from-bundle",
+    "build": "npm run bundle && bytenode -c ./dist/index.js",
     "start": "npm run build && bytenode ./dist/index.jsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
