@@ -20,7 +20,7 @@ All .js files are compiled to .jsc by `npm run build`, which is called by `npm s
 ### Run with Docker
 
 ```bash
-docker run -it -p 8080:8080 nwtgck/bytenode-piping-server
+docker run -p 8080:8080 nwtgck/bytenode-piping-server
 ```
 
 Then, a Piping server is running on http://localhost:8080.
