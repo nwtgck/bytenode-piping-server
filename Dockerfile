@@ -16,11 +16,14 @@ FROM node:10.15-alpine
 
 LABEL maintainer="Ryo Ota <nwtgck@gmail.com>"
 
+# Install tini
+RUN apk add --no-cache tini
+
 # Install bytenode globally
 RUN npm install -g bytenode
 
 # Copy compiled jsc to /app
 COPY --from=build /build/dist/index.jsc /app/index.jsc
 
-# Run entry (Run the server)
-ENTRYPOINT ["bytenode", "/app/index.jsc"]
+# Run a server
+ENTRYPOINT [ "tini", "--", "bytenode", "/app/index.jsc" ]
