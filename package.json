@@ -14,6 +14,6 @@
   "license": "MIT",
   "devDependencies": {
     "bytenode": "^1.0.2",
-    "parcel-bundler": "^1.12.0"
+    "parcel-bundler": "^1.12.1"
   }
 }
