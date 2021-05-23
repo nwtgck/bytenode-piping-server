@@ -13,7 +13,7 @@
   "author": "Ryo Ota <nwtgck@gmail.com> (https://github.com/nwtgck)",
   "license": "MIT",
   "devDependencies": {
-    "bytenode": "^1.1.2",
+    "bytenode": "^1.3.3",
     "parcel-bundler": "^1.12.4"
   }
 }
